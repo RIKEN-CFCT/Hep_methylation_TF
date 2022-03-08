@@ -11,7 +11,7 @@ selDataMatrix <- lumiMethyNorm(
 
 #===================================================================================================
 
-# correlation matrix (Fig. 1C)
+# correlation matrix (Fig. 1f)
 
 #===================================================================================================
 cor.exp <- cor(selDataMatrix)
@@ -50,7 +50,7 @@ dev.off()
 
 #===================================================================================================
 
-# DMR b2b plot (Fig. 1D)
+# DMR b2b plot (Fig. 1g)
 
 #===================================================================================================
 #Count DMP
@@ -152,7 +152,7 @@ ggsave(g_all, file="nDMP_b2bplot.pdf", width=7, height=7)
 
 #===================================================================================================
 
-# Functional analysis of DMRs (Fig. S2)
+# Functional analysis of DMRs (Supplementary Figure 3)
 
     #GO analysis using eGREAT and then summaryze using rrvgo
 
@@ -226,7 +226,7 @@ for(i in c("Methyl, Demethyl")){
 
 #===================================================================================================
 
-# Heatmap for methylation regulating TF (Fig. 2B, D)
+# Heatmap for methylation regulating TF (Fig. 2b, d)
 
 #===================================================================================================
 #Motif overrepresentation analysis
@@ -393,7 +393,7 @@ for(i in c("Methyl", "Demethyl")){
 }
 #===================================================================================================
 
-# exprssion line plot (Fig. 2C and 2E; Fig. S3)
+# exprssion line plot (Fig. 2c and 2e; Supplementary Figure 4)
 
 #===================================================================================================
 for(i in c("Methyl", "Demethyl")){

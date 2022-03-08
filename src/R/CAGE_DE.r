@@ -1,6 +1,6 @@
 #===================================================================================================#
 
-# Marker gene exprssion (Fig. S5A)
+# Marker gene exprssion (Supplementary Figure 6a)
 #
 #
 #   description: This script vidualize expression of indicated genes as a line plot.

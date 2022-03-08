@@ -2,7 +2,7 @@
 
 # Expression Table
 
-    #For  "Heatmap for methylation regulating TF (Fig. 2B, D)" in Methyl850_HEP.r
+    #For  "Heatmap for methylation regulating TF (Fig. 2b, d)" in Methyl850_HEP.r
 
 #===================================================================================================#
 expMatrix <- read.table("iPS_HEP_diff_F5.TPM.txt", header=TRUE, row.name=NULL, sep="\t", stringsAsFactors=FALSE)
@@ -48,7 +48,7 @@ colnames(sd.gene_expMatrix) <- c("iPS_HEP_D00", "iPS_HEP_D07", "iPS_HEP_D14", "i
 save(list=ls(), file="out/CAGE_HEP/gene_expMatrix.RData")
 #===================================================================================================#
 
-# Marker gene exprssion (Fig. S1A and S1C)
+# Marker gene exprssion (Supplementary Figure 1c, 2c and 4c)
 
     #description: This script vidualize expression of indicated genes as a line plot.
 
@@ -81,8 +81,8 @@ rownames(sd.expMatrix) <- expMatrix$prmtrID
 
 #extraction of GOI
 psc_marker <- c("POU5F1", "NANOG")
-de_marker <- c("SOX17", "FOXA2", "GATA6")
-hep_marker <- c("HNF4A", "ASGR1", "APOB","AFP", "PAX6", "PPARA", "CYP3A4")
+de_marker <- c("SOX17", "FOXA2")
+hep_marker <- c("HNF1A", "TBX3", "HNF4A", "ASGR1", "APOB","SLC10A1", "AFP", "KRT18", "SERPINA1" "ALB", "CYP3A4", "FOXA2")
 methylation_genes <- c("DNMT1", "DNMT3A", "DNMT3B", "TET1", "TET2", "TET3")
 
 gois <- c(psc_marker, de_marker,hep_marker, methylation_genes)
