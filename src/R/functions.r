@@ -212,10 +212,8 @@ tcHeatmap <- function(df, mycols, z = TRUE,...){
 #' 
 #' @importFrom ggplot2
 #' 	ggplot
-#' 	geom_ribbon
+#' stat_summary
 #' 	aes
-#' 	geome_line
-#' 	geome_point
 #' 	labs
 #' 	scale_color_manual
 #' 	scale_fill_manual
@@ -233,7 +231,7 @@ tcHeatmap <- function(df, mycols, z = TRUE,...){
 #' @export
 #' 
 #'     
-tcLinePlot <- function(df, is.log = FALSE, color, fill, y_lim = FALSE){
+tcLinePlot <- function(df, is.log = FALSE, color, fill,  y_limit = NULL){
     df1 <- df + 0.0001
 
 	#convert to fold-change (vs most left column)
@@ -252,23 +250,28 @@ tcLinePlot <- function(df, is.log = FALSE, color, fill, y_lim = FALSE){
     rownames(df2) <- rownames(df1)
     colnames(df2) <- colnames(df1)
 
-	#compute mean and sd
-    df3 <- data.frame(
-        timepoint = as.numeric(colnames(df2)),
-        mean = sapply(df2, mean), 
-        sd = sapply(df2, sd) 
-    )
-    df3 <- mutate(df3, ymin=df3$mean-df3$sd) %>% 
-        mutate(ymax=mean+sd)
-
-    g <- ggplot(df3, aes(x = timepoint))
-    g <- g + geom_ribbon(aes(ymin = ymin, ymax=ymax), fill= fill, color=NA)
-    g <- g + geom_line(aes(y=mean), color=color, size=1)
-    g <- g + geom_point(aes(y=mean), color="black", size=1.7)
+    #plot
+    df3 <- df2 %>%
+        mutate(probe_ID = rownames(df2)) %>%
+        pivot_longer(cols=-probe_ID, names_to = "time", values_to = "logFC")
+        
+    g <- ggplot(df3, aes(x = time, y=logFC))
+    g <- g + stat_summary(fun = mean, geom="line", aes(group=1), color = color)
+    g <- g + stat_summary(fun = mean, geom = "point", aes(group=1), size=4)
+    g <- g + stat_summary( 
+        fun.min = function(x){
+            mean(x)-sd(x)},
+        fun.max = function(x){
+            mean(x)+sd(x)}, 
+        geom = "ribbon",
+        aes(group = 1),
+        fill = fill, 
+        color = NA
+    ) 
     g <- g + labs(x = "Timepoint", y = "Fold-Change (log)")
-	if(y_lim != FALSE){
-    	g <- g + ylim(y_lim[1], y_lim[2])
-	}
+    if(!is.null(y_limit)){
+        g <- g + scale_y_continuous(limits = y_limit)
+    }
     g <- g + theme(
         axis.text = element_text(color = "black", size = 18),    # axis texit setting
         axis.ticks = element_line(color = "black", size = .5),    # Setting of scale ticks line

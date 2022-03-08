@@ -1,6 +1,6 @@
 Hep_methylation_TF
 ===
-Last update: 2021-11-09
+Last update: 20212-03-08
 
 Author: Takahiro Suzuki (takahiro.suzuki.aa@riken.jp)
 <br><br>
@@ -56,49 +56,40 @@ wigToBigWig (https://www.encodeproject.org/software/wigtobigwig/)
 
    Normalization and M-value computation
 
-- correlation matrix (Fg. 1C)
-- DMR b2b plot (Fig. 1D)
-- Functional analysis of DMRs (Fig. S2)
-- Heatmap for methylation regulating TF (Fig. 2B, D)
-- exprssion line plot (Fig. 2C and 2E; Fig. S3)
+- correlation matrix (Fg. 1f)
+- DMR b2b plot (Fig. 1g)
+- Functional analysis of DMRs (Supplementary Figure 3)
+- Heatmap for methylation regulating TF (Fig. 2b and 2d)
+- exprssion line plot (Fig. 2c and 2e; Supplementary Figure 4)
 
 ### 2. CAGE_HEP.r
-- Expression Table for For  "Heatmap for methylation regulating TF (Fig. 2B, D)" in Methyl850_HEP.r
-- Marker gene exprssion (Fig. S1A and S1C)
+- Expression Table for For  "Heatmap for methylation regulating TF (Fig. 2b, d)" in Methyl850_HEP.r
+- Marker gene exprssion (Supplementary Figure 1c and 2c)
 
    Plots showing GOI expression pattern of GOIs
 
-
-
-### 3. Methyl850_OE.r
-- Preprocessing
-
-    Normalization and M-value computation
-	
-- Scatter plot (Fig. 3B)
-- Motf overrepresenation analysis (Fig. 3C)
 
 ### 4. Methyl850_DE.r
 - preprocessing 
 
    Normalization and M-value computation
    
-- DMR b2b plot (Fig. 4B)
-- enrichment plot (Fig S5B and S5C)
-- overlap of demethylated probes(upset plot)(Fig. 4C)
-- methylation heatmap for uninheited demet probes (Fig. S5D)
-- enrichment plot for uninherited demethylated regions (Fig. 4D)
-- Enrichment heatmap(Fig. 4E and 5B)
-- expression analysis for demet probes (Fig. 5A)
-- Functional Annotation of DMRs (Fig. S6A)
+- DMR b2b plot (Fig. 4b)
+- enrichment plot (Supplementary Figure 6b and 6c)
+- overlap of demethylated probes(upset plot)(Fig. 4c)
+- methylation heatmap for uninheited demet probes (Supplementary Figure 6d)
+- enrichment plot for uninherited demethylated regions (Fig. 4d)
+- Enrichment heatmap(Fig. 4e and 5b)
+- expression analysis for demet probes (Fig. 5a)
+- Functional Annotation of DMRs (Supplementary Figure 7a)
 
-### 5. CAGE_DE.r (Fig. S5A)
+### 5. CAGE_DE.r (Supplementary Figure 6a)
 
-### 6. multi-omics.r(Fig. 6A)
+### 6. multi-omics.r(Fig. 6a)
 
-### 7. ATAC_DE.r (Fig. S6C)
+### 7. ATAC_DE.r (Supplementary Figure 7c)
 
-### 8. OE_DE_HEP_intersect.r (Fig. S5E)
+### 8. OE_DE_HEP_intersect.r (Supplementary Figure 6e)
 
 <br><br>
 

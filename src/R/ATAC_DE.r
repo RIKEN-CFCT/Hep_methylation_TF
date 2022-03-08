@@ -1,6 +1,6 @@
 #===================================================================================================
 
-# Accesibility change at Demethyl/hyper-methyl maintaining regions (Fig. S6C)
+# Accesibility change at Demethyl/hyper-methyl maintaining regions (Supplementary Figure7c)
 
 #    peak based analysis
 #    1. peak calling: bam2peaks_ATAC.sh (wrapper of MACS2)
@@ -108,6 +108,7 @@ p1 <- p1 + stat_summary(geom = "pointrange",
     size=1,
     alpha=.5)
 p1 <- p1 + stat_summary(fun = mean, geom="line", aes(group=1))
+p1 <- p1 + geom_jitter(alpha = .2, size = 0.8)
 p1 <- p1 + ylim(-2.5,5.5)
 p1 <- p1 + my.theme + theme(legend.position = 'none')
 p1 <- p1 + 	scale_color_jama()
@@ -132,6 +133,7 @@ p2 <- p2 + stat_summary(geom = "pointrange",
     size=1,
     alpha=.5)
 p2 <- p2 + stat_summary(fun = mean, geom="line", aes(group=1))
+p2 <- p2 + geom_jitter(alpha = 0.2, size =0.8)
 p2 <- p2 + ylim(-2.4,5.5)
 p2 <- p2 + my.theme + theme(legend.position = 'none', axis.title.y = element_blank())
 p2 <- p2 + 	scale_color_jama()

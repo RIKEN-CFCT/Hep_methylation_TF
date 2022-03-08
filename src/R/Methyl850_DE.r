@@ -13,7 +13,7 @@ selDataMatrix <- lumiMethyNorm(
 
 #===================================================================================================
 
-# DMR b2b plot (Fig. 4B)
+# DMR b2b plot (Fig. 4b)
 
 #===================================================================================================
 #Count DMP
@@ -125,7 +125,7 @@ ggsave(g_all, file = "nDMP_b2bplot.pdf", width = 7, height = 7)
 
 #===================================================================================================
 
-#enrichment plot (Fig. S5B and S5C)
+#enrichment plot (Supplementary Figure 5b and 5c)
 
 #===================================================================================================
 #motif database construction
@@ -249,7 +249,7 @@ ggsave(g_all, file = pdfout, width = 42, height = 7)
 
 #===================================================================================================
 
-#overlap of demethylated probes(upset plot)(Fig. 4C)
+#overlap of demethylated probes(upset plot)(Fig. 4c)
 
 #===================================================================================================
 bed_list <- NULL
@@ -275,7 +275,7 @@ dev.off()
 
 #===================================================================================================
 #
-#methylation heatmap for uninheited demet probes (Fig. S5D)
+#methylation heatmap for uninheited demet probes (Supplementary Figure 5d)
 #
 #===================================================================================================
 df <- selDataMatrix[rownames(selDataMatrix) %in% data[5], 1:6]
@@ -291,7 +291,7 @@ draw(ht)
 dev.off()
 #===================================================================================================
 
-#enrichment plot for uninherited demethylated regions (Fig. 4D)
+#enrichment plot for uninherited demethylated regions (Fig. 4d)
 
 #===================================================================================================
 #uninherited
@@ -431,8 +431,8 @@ ggsave(g_all, file = "uninherited_enrichment_plot.pdf", width = 35, height = 7)
 
 #  Enrichment heatmap
 #
-# 1. GATA6 ChIPmeantation (Fig. 4E)
-# 2. ATAC-seq (Fig. 5B)
+# 1. GATA6 ChIPmeantation (Fig. 4e)
+# 2. ATAC-seq (Fig. 5b)
 
 #===================================================================================================
 #-------------------------------------------------
@@ -552,7 +552,7 @@ g_ATAC <- plot_grid(plotlist = grab_list_ATAC, ncol = 1, align = "hv", axis =  "
 
 #===================================================================================================
 
-#expression analysis for demet probes (Fig. 5A)
+#expression analysis for demet probes (Fig. 5a)
 
 #===================================================================================================
 #bed files of demethylated region
@@ -649,7 +649,7 @@ for(i in seq(length(mean_expMatrix_list))){
     df <- as.data.frame(mean_expMatrix_list[[i]])
     names(df) <- c(0, 48, 54, 60, 66, 72)
 
-    g <- tcLinePlot(df = df, is.log = FALSE, color = "green4", fill = alpha("palegreen1", 0.4), y_lim = c(-9, 15))
+    g <- tcLinePlot(df = df, is.log = FALSE, color = "green4", fill = alpha("palegreen1", 0.4), y_limit = c(-30, 30))
     glist <- c(g_list, list(g))
 }
 
@@ -658,7 +658,7 @@ ggsave(g_all, file = "mean.tpm_heatmap_demet.pdf", width = 42, height = 7)
 
 #===================================================================================================
 
-#Functional Annotation of DMRs (Fig. S6A)
+#Functional Annotation of DMRs (Supplementary Figure 7a)
 
 #===================================================================================================
 #Processing of gencode gff3 file
