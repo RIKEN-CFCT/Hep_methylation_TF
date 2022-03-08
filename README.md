@@ -1,5 +1,7 @@
 Hep_methylation_TF
 ===
+<a href="https://zenodo.org/badge/latestdoi/426083082"><img src="https://zenodo.org/badge/426083082.svg" alt="DOI"></a>
+
 Last update: 2021-03-08
 
 Author: Takahiro Suzuki (takahiro.suzuki.aa@riken.jp)
